@@ -1,4 +1,4 @@
 .idea/
 */__init__.py
-resources/config.json
-resources/credentials.json
+autologin/config.json
+autologin/credentials.json

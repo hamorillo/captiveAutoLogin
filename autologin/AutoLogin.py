@@ -75,11 +75,11 @@ def login(user, password, login_url):
     driver.close()
 
 
-def get_config(path):
+def load_config(path):
     if os.path.isfile(path) and os.access(path, os.R_OK):
         print("Config file exists and is readable")
 
-        with open(CONFIG_FILE_PATH, "r") as data_file:
+        with open(path, "r") as data_file:
             data_loaded = json.load(data_file)
 
         return data_loaded["login_url"], data_loaded["wifi_ssid"]
@@ -87,11 +87,11 @@ def get_config(path):
         print("Either the config file is missing or not readable, please add a \\config.json")
 
 
-def get_credentials(path):
+def load_credentials(path):
     if os.path.isfile(path) and os.access(path, os.R_OK):
         print("Credentials file exists and is readable")
 
-        with open(CREDENTIALS_PATH, "r") as data_file:
+        with open(path, "r") as data_file:
             data_loaded = json.load(data_file)
 
         return data_loaded["user"], data_loaded["password"]
@@ -100,7 +100,7 @@ def get_credentials(path):
 
 
 if __name__ == '__main__':
-    loaded_login_url, loaded_wifi_ssid = get_config(CONFIG_FILE_PATH)
+    loaded_login_url, loaded_wifi_ssid = load_config(CONFIG_FILE_PATH)
     if not loaded_login_url or not loaded_wifi_ssid:
         pass
 
@@ -111,6 +111,6 @@ if __name__ == '__main__':
         kill_captative_process(RETRIES_KILL_CAPTIVE_WINDOW, WAIT_TIME_TO_KILL_CAPTIVE_WINDOW)
 
         print("Trying to login...")
-        login(get_credentials(CREDENTIALS_PATH), loaded_login_url)
+        login(load_credentials(CREDENTIALS_PATH), loaded_login_url)
     else:
         print("WIFI Network not connected")
