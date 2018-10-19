@@ -8,17 +8,17 @@
     the LICENSE.txt file in the root directory of this source tree.
 '''
 import unittest
-from autologin import AutoLogin
+from autologin import auto_login
 
 
 class TestAutoLogin(unittest.TestCase):
     def test_given_config_file_load_config_retrieves_correct_data(self):
-        url, ssid = AutoLogin.load_config("../test/resources/config.json")
+        url, ssid = auto_login.load_config("../test/resources/config.json")
         self.assertEqual("wifi_ssid", ssid)
         self.assertEqual("login_url", url)
 
     def test_given_credentials_file_load_credentials_retrieves_correct_date(self):
-        user, password = AutoLogin.load_credentials("../test/resources/credentials.json")
+        user, password = auto_login.load_credentials("../test/resources/credentials.json")
         self.assertEqual("user", user)
         self.assertEqual("password", password)
 
