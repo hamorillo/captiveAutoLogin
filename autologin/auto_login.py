@@ -30,7 +30,8 @@ def restart_wifi():
 
 
 def get_ssid_network_connected():
-    return os.popen("/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I "
+    return os.popen("/System/Library/PrivateFrameworks/Apple80211.framework/"
+                    "Versions/Current/Resources/airport -I "
                     "| awk -F': ' '/ SSID/ {print $2}'").read()
 
 
