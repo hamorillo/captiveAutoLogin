@@ -4,6 +4,13 @@ python:
   - "3.6"
   - "3.7"
 
+notifications:
+    email:
+      recipients:
+        - hectorabrahammp@gmail.com
+      on_success: never
+      on_failure: always
+
 install:
   - pip install -r requirements.txt
 
