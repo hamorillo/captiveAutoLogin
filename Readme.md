@@ -1,4 +1,6 @@
 # Auto Login Script
+[![Build Status](https://travis-ci.org/hmorillo/captiveAutoLogin.svg?branch=master)](https://github.com/hmorillo/captiveAutoLogin)
+
 This script make easier the login with captive credentials window.
 
 ## Dependencies
