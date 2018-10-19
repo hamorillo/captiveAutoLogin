@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+'''
+    @license
+
+    Copyright(c) 2018, Héctor Abraham Morillo Prieto and the project's contributors.
+
+    This source code is licensed under the Apache License, Version 2.0 found in
+    the LICENSE.txt file in the root directory of this source tree.
+'''
+
 import os
 import json
 from selenium import webdriver
