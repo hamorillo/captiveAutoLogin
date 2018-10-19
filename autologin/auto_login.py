@@ -2,7 +2,8 @@
 """
     @license
 
-    Copyright(c) 2018, Héctor Abraham Morillo Prieto and the project's contributors.
+    Copyright(c) 2018,
+    Héctor Abraham Morillo Prieto and the project's contributors.
 
     This source code is licensed under the Apache License, Version 2.0 found in
     the LICENSE.txt file in the root directory of this source tree.
@@ -49,7 +50,9 @@ def wait_for_network(retries, wait_time_seconds, wifi_ssid):
 def kill_captative_process(retries, wait_time_seconds):
     process_id = os.popen("ps -x | pgrep \"Captive Network Assistant\"").read()
     if not process_id:
-        print("Captive window NOT found, nothing to KILL! - REMAINING RETRIES", retries)
+        print(
+            "Captive window NOT found, nothing to KILL! - REMAINING RETRIES",
+            retries)
         if retries > 0:
             sleep(wait_time_seconds)
             return kill_captative_process(retries - 1, wait_time_seconds)
@@ -84,7 +87,9 @@ def load_config(path):
 
         return data_loaded["login_url"], data_loaded["wifi_ssid"]
     else:
-        print("Either the config file is missing or not readable, please add a \\config.json")
+        print(
+            "Either the config file is missing or not readable, "
+            "please add a \\config.json")
 
 
 def load_credentials(path):
@@ -105,10 +110,13 @@ if __name__ == '__main__':
         pass
 
     restart_wifi()
-    if wait_for_network(RETRIES_FOR_NETWORK, WAIT_TIME_FOR_NETWORK, loaded_wifi_ssid):
+    if wait_for_network(RETRIES_FOR_NETWORK,
+                        WAIT_TIME_FOR_NETWORK, loaded_wifi_ssid):
         sleep(WAIT_TIME_FOR_OPEN_CAPTIVE_WINDOW)
         print("Trying to killing captive login...")
-        kill_captative_process(RETRIES_KILL_CAPTIVE_WINDOW, WAIT_TIME_TO_KILL_CAPTIVE_WINDOW)
+        kill_captative_process(
+            RETRIES_KILL_CAPTIVE_WINDOW,
+            WAIT_TIME_TO_KILL_CAPTIVE_WINDOW)
 
         print("Trying to login...")
         login(load_credentials(CREDENTIALS_PATH), loaded_login_url)

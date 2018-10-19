@@ -2,7 +2,8 @@
 """
     @license
 
-    Copyright(c) 2018, Héctor Abraham Morillo Prieto and the project's contributors.
+    Copyright(c) 2018,
+    Héctor Abraham Morillo Prieto and the project's contributors.
 
     This source code is licensed under the Apache License, Version 2.0 found in
     the LICENSE.txt file in the root directory of this source tree.
@@ -22,8 +23,10 @@ class TestAutoLogin(unittest.TestCase):
         self.assertEqual("wifi_ssid", ssid)
         self.assertEqual("login_url", url)
 
-    def test_given_credentials_file_load_credentials_retrieves_correct_date(self):
-        user, password = auto_login.load_credentials("../test/resources/credentials.json")
+    def test_given_credentials_file_load_credentials_retrieves_correct_date(
+            self):
+        user, password = auto_login.load_credentials(
+            "../test/resources/credentials.json")
         self.assertEqual("user", user)
         self.assertEqual("password", password)
 

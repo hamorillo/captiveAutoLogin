@@ -11,8 +11,13 @@ notifications:
       on_failure: always
 
 install:
+  - pip install --upgrade pip
+  - pip install pycodestyle
   - pip install -r requirements.txt
 
 script:
+  # List the PEP8 error - We should fix their
+  - find . -name \*.py -exec pycodestyle --ignore=E402,W504,W605 {} +
+
   - cd test
   - python -m unittest discover -v
