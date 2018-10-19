@@ -35,7 +35,7 @@ You have to write a json file with name **credentials.json** in the same directo
 The script needs a **config.json** file in which you have to specify the login URL:
 
 `` {
-    "wifi_ssid": "OSP_Guest",
+    "wifi_ssid": "WiFiSSID",
     "login_url": "https://login_captive.html"
 }
 ``
