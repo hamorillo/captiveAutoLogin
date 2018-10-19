@@ -41,7 +41,7 @@ def wait_for_network(retries, wait_time_seconds, wifi_ssid):
     elif retries > 0:
         print("Waiting for network, REMAINING RETRIES ", retries)
         sleep(wait_time_seconds)
-        return wait_for_network(retries - 1, wait_time_seconds)
+        return wait_for_network(retries - 1, wait_time_seconds, wifi_ssid)
     else:
         return False
 
