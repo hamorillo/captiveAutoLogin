@@ -2,7 +2,7 @@
 This script make easier the login with captive credentials window.
 
 ## Dependencies
-* Python 3.7
+* Python 3.6 or 3.7
 * Selenium
 * Safari
 
@@ -13,7 +13,7 @@ I assume that you have HomeBrew... If you don't have it go here and enjoy it :)
 You can install HomeBrew with:
 ``/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"``
 
-If you don't have Python3.7 install it:
+If you don't have Python 3.6 or 3.7 install it:
 ``brew install python3``
 
 Install selenium dependency in Python:
