@@ -120,6 +120,7 @@ if __name__ == '__main__':
             WAIT_TIME_TO_KILL_CAPTIVE_WINDOW)
 
         print("Trying to login...")
-        login(load_credentials(CREDENTIALS_PATH), loaded_login_url)
+        loaded_user, loaded_password = load_credentials(CREDENTIALS_PATH)
+        login(loaded_user, loaded_password, loaded_login_url)
     else:
         print("WIFI Network not connected")
